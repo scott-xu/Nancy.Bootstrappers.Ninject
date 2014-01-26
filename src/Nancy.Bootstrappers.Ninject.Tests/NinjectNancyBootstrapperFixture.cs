@@ -27,15 +27,16 @@
         }
 
         [Fact]
-        public void GetAllModules_Returns_As_MultiInstance()
+        public void GetAllModules_With_Different_Contexts_Returns_Different_Instances()
         {
             // Given
             this.bootstrapper.GetEngine();
-            var context = new NancyContext();
+            var context1 = new NancyContext();
+            var context2 = new NancyContext();
 
             // When
-            var output1 = this.bootstrapper.GetAllModules(context).FirstOrDefault(nm => nm.GetType() == typeof(FakeNancyModuleWithBasePath));
-            var output2 = this.bootstrapper.GetAllModules(context).FirstOrDefault(nm => nm.GetType() == typeof(FakeNancyModuleWithBasePath));
+            var output1 = this.bootstrapper.GetAllModules(context1).FirstOrDefault(nm => nm.GetType() == typeof(FakeNancyModuleWithBasePath));
+            var output2 = this.bootstrapper.GetAllModules(context2).FirstOrDefault(nm => nm.GetType() == typeof(FakeNancyModuleWithBasePath));
 
             // Then
             output1.ShouldNotBeNull();

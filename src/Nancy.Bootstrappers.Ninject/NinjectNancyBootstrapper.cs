@@ -55,7 +55,7 @@
         /// <returns>Container instance</returns>
         protected override IKernel GetApplicationContainer()
         {
-            return new StandardKernel(new[] { new FactoryModule() });
+            return new StandardKernel();
         }
 
         /// <summary>
