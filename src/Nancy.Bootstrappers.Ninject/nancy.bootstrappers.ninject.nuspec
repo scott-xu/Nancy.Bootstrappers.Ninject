@@ -16,6 +16,7 @@
       <dependency id="Nancy" />
 	  <dependency id="Ninject" />
 	  <dependency id="Ninject.Extensions.ChildKernel" />
+	  <dependency id="Ninject.Extensions.Factory" />
     </dependencies> 
     <tags>Nancy Ninject</tags>
   </metadata>
